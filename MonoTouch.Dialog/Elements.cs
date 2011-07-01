@@ -941,12 +941,15 @@ namespace MonoTouch.Dialog
 		{
 			RootElement root = (RootElement) Parent.Parent;
 			if (RadioIdx != root.RadioSelected){
-				var cell = tableView.CellAt (root.PathForRadio (root.RadioSelected));
-				if (cell != null)
-					cell.Accessory = UITableViewCellAccessory.None;
-				cell = tableView.CellAt (indexPath);
-				if (cell != null)
-					cell.Accessory = UITableViewCellAccessory.Checkmark;
+				var path = root.PathForRadio(root.RadioSelected);
+				if (path!=null) {
+					var oldCell = tableView.CellAt (path);
+					if (oldCell != null)
+						oldCell.Accessory = UITableViewCellAccessory.None;
+				}
+				var selectedCell = tableView.CellAt (indexPath);
+				if (selectedCell != null)
+					selectedCell.Accessory = UITableViewCellAccessory.Checkmark;
 				root.RadioSelected = RadioIdx;
 			}
 			
