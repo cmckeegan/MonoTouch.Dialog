@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouch.Dialog", "MonoTou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{F6AEFFC5-4807-49A3-83C5-661E655CB59A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouch.Dialog.Extensions", "MonoTouch.Dialog.Extensions\MonoTouch.Dialog.Extensions.csproj", "{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Extensions", "Sample.Extensions\Sample.Extensions.csproj", "{536B1D6F-70D8-49ED-8A10-35B83606465B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -21,6 +25,22 @@ Global
 		{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}.Release|iPhone.Build.0 = Release|iPhone
 		{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Release|iPhone.Build.0 = Release|iPhone
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{536B1D6F-70D8-49ED-8A10-35B83606465B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Debug|iPhone.Build.0 = Debug|iPhone
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Release|iPhone.ActiveCfg = Release|iPhone
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Release|iPhone.Build.0 = Release|iPhone
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{89C47756-ECE5-45F7-8CB1-D4F7524EBCCD}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{F6AEFFC5-4807-49A3-83C5-661E655CB59A}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{F6AEFFC5-4807-49A3-83C5-661E655CB59A}.Debug|iPhone.Build.0 = Debug|iPhone
 		{F6AEFFC5-4807-49A3-83C5-661E655CB59A}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
@@ -31,6 +51,6 @@ Global
 		{F6AEFFC5-4807-49A3-83C5-661E655CB59A}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Sample\Sample.csproj
+		StartupItem = Sample.Extensions\Sample.Extensions.csproj
 	EndGlobalSection
 EndGlobal

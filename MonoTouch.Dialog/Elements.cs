@@ -2391,8 +2391,7 @@ namespace MonoTouch.Dialog
 			}
 		}
 		
-		public override UITableViewCell GetCell (UITableView tv)
-		{
+		protected virtual UITableViewCell CreateCell(UITableView tv) {
 			var cell = tv.DequeueReusableCell (rkey);
 			if (cell == null){
 				var style = summarySection == -1 ? UITableViewCellStyle.Default : UITableViewCellStyle.Value1;
@@ -2400,8 +2399,12 @@ namespace MonoTouch.Dialog
 				cell = new UITableViewCell (style, rkey);
 				cell.SelectionStyle = UITableViewCellSelectionStyle.Blue;
 			} 
+			
+			return cell;
+		}
 		
-			cell.TextLabel.Text = Caption;
+		protected virtual string GetSummary(UITableView tv) {
+			
 			var radio = group as RadioGroup;
 			if (radio != null){
 				int selected = radio.Selected;
@@ -2413,13 +2416,13 @@ namespace MonoTouch.Dialog
 							continue;
 						
 						if (current == selected){
-							cell.DetailTextLabel.Text = e.Summary ();
-							goto le;
+							return e.Summary ();
 						}
 						current++;
 					}
 				}
-			} else if (group != null){
+			} 
+			else if (group != null){
 				int count = 0;
 				
 				foreach (var s in Sections){
@@ -2438,13 +2441,24 @@ namespace MonoTouch.Dialog
 						}
 					}
 				}
-				cell.DetailTextLabel.Text = count.ToString ();
-			} else if (summarySection != -1 && summarySection < Sections.Count){
-					var s = Sections [summarySection];
-					if (summaryElement < s.Elements.Count)
-						cell.DetailTextLabel.Text = s.Elements [summaryElement].Summary ();
+				return count.ToString ();
 			} 
-		le:
+			else if (summarySection != -1 && summarySection < Sections.Count){
+					var s = Sections [summarySection];
+					return s.Summary();
+			} 
+			
+			return String.Empty;
+		}
+		
+		public override UITableViewCell GetCell (UITableView tv)
+		{
+			var cell = CreateCell(tv);
+		
+			cell.TextLabel.Text = Caption;
+			if (cell.DetailTextLabel!=null)
+				cell.DetailTextLabel.Text = GetSummary(tv);
+			
 			cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			
 			return cell;
